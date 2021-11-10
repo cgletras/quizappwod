@@ -8,67 +8,68 @@
 
     <ImageView
         android:id="@+id/iv_wod"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:src="@drawable/worldofdarknessmmo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Quiz"
+        android:alpha="0.6"
+        android:background="@color/black"
         android:fontFamily="@font/darkagestypo"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:text="Quiz"
         android:textColor="@color/white"
         android:textSize="30sp"
-        android:background="@color/black"
-        android:alpha="0.6"
-        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_wod"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_wod"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/main_title"
-        android:textSize="20sp"
-        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="About WOD"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="@font/darkagestypo"
         android:gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintTop_toBottomOf="@id/iv_wod"
-        />
-
-    <TextView
-        android:id="@+id/main_disclaimer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:text="About WOD"
         android:textSize="20sp"
-        android:text="@string/world_of_darkness_description"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/iv_wod" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_margin="20dp"
-        android:fontFamily="@font/gabriola"
-        app:layout_constraintTop_toBottomOf="@id/main_title"
-        />
+        app:layout_constraintBottom_toTopOf="@id/bv_main_button"
+        app:layout_constraintTop_toBottomOf="@id/main_title">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gabriola"
+            android:textSize="20sp"
+            android:text="@string/world_of_darkness_description" />
+    </ScrollView>
 
     <Button
+        android:id="@+id/bv_main_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:text="Start quiz"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/main_disclaimer"
-        android:background="@color/black"
+        android:layout_marginVertical="10dp"
         android:alpha="0.8"
+        android:background="@color/black"
         android:fontFamily="@font/darkagestypo"
-        />
+        android:text="Start quiz"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
