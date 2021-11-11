@@ -1,7 +1,6 @@
 package com.example.quizappwod;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityOptionsCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,8 +19,7 @@ public class MainActivity extends AppCompatActivity {
     public void startQuiz(View view) {
         Intent intent = new Intent(this, QuestionActivity.class);
         ImageView wodImage = (ImageView) findViewById(R.id.iv_wod);
-        ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(this, wodImage, "iv_wod");
 
-        startActivity(intent, activityOptionsCompat.toBundle());
+        startActivity(intent);
     }
 }

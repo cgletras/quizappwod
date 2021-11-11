@@ -1,7 +1,6 @@
 package com.example.quizappwod;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -69,8 +68,8 @@ public class QuestionActivity extends AppCompatActivity {
 
         editText.setOnFocusChangeListener((v, hasFocus) -> {
             String typedClan = editText.getText().toString().toLowerCase();
-            if (!hasFocus){
-                if(typedClan.equals(clan.toLowerCase())) {
+            if (!hasFocus) {
+                if (typedClan.equals(clan.toLowerCase())) {
                     rightAnswers[2] = 1;
                 }
             }
@@ -110,15 +109,19 @@ public class QuestionActivity extends AppCompatActivity {
         if (checked) disciplines.add(((CheckBox) view).getText().toString());
         else disciplines.remove(((CheckBox) view).getText().toString());
 
-        if (disciplines.contains("Protean") && disciplines.contains("Fortitude") && disciplines.contains("Animalism") && !disciplines.contains("Celerity") && !disciplines.contains("Dominate")){
+        if (disciplines.contains("Protean") && disciplines.contains("Fortitude") && disciplines.contains("Animalism") && !disciplines.contains("Celerity") && !disciplines.contains("Dominate")) {
             rightAnswers[4] = 1;
-        }
-        else {
+        } else {
             rightAnswers[4] = 0;
         }
     }
 
     public void checkAnswers(View view) {
-        Toast.makeText(this, Arrays.toString(rightAnswers), Toast.LENGTH_SHORT).show();
+        int score = 0;
+        for (int i : rightAnswers) {
+            score+= i;
+        }
+        Toast.makeText(this, "You got " + score + " out of 5 question right!", Toast.LENGTH_SHORT).show();
+        score = 0;
     }
 }
