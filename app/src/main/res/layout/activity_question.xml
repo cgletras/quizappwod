@@ -63,7 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:onClick="onRadioBtClick"
+                    android:onClick="onRadioBtClickQuestion1"
                     android:buttonTint="#B03030"
                     android:text="Lasombra" />
                 <RadioButton
@@ -72,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:buttonTint="#B03030"
-                    android:onClick="onRadioBtClick"
+                    android:onClick="onRadioBtClickQuestion1"
                     android:text="Gangrel" />
                 <RadioButton
                     android:id="@+id/rbv_ventrue"
@@ -80,7 +80,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:buttonTint="#B03030"
-                    android:onClick="onRadioBtClick"
+                    android:onClick="onRadioBtClickQuestion1"
                     android:text="Ventrue" />
             </RadioGroup>
             <TextView
@@ -105,19 +105,19 @@
                 android:id="@+id/checkBoxGangrel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="onCheckBox"
+                android:onClick="onCheckBoxQuestion2"
                 android:text="Gangrel" />
             <CheckBox
                 android:id="@+id/checkBoxNosferatu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="onCheckBox"
+                android:onClick="onCheckBoxQuestion2"
                 android:text="Nosferatu" />
             <CheckBox
                 android:id="@+id/checkBoxToreador"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="onCheckBox"
+                android:onClick="onCheckBoxQuestion2"
                 android:text="Toreador" />
 
             <TextView
@@ -149,10 +149,107 @@
                 android:inputType="text"
                 android:text=""
                 android:hint="Clan name only"/>
+            <TextView
+                android:id="@+id/tv_question_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/darkagestypo"
+                android:gravity="center_horizontal"
+                android:text="Question 4"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gabriola"
+                android:textSize="25sp"
+                android:text="What Mage house has PRIME as preffered sphere?"
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/rbv_akashic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onRadioBtClickQuestion4"
+                    android:buttonTint="#B03030"
+                    android:text="Akashic Brotherhood" />
+                <RadioButton
+                    android:id="@+id/rbv_son"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="#B03030"
+                    android:onClick="onRadioBtClickQuestion4"
+                    android:text="Son of Ether" />
+                <RadioButton
+                    android:id="@+id/rbv_verbena"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="#B03030"
+                    android:onClick="onRadioBtClickQuestion4"
+                    android:text="Verbena" />
+            </RadioGroup>
+            <TextView
+                android:id="@+id/tv_question_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/darkagestypo"
+                android:gravity="center_horizontal"
+                android:text="Question 5"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gabriola"
+                android:textSize="25sp"
+                android:text="Select the 3 Clan disciplines for Gangrels (Country ones)"
+
+                />
+
+            <CheckBox
+                android:id="@+id/checkBoxFortitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onCheckBoxQuestion5"
+                android:text="Fortitude" />
+            <CheckBox
+                android:id="@+id/checkBoxDominate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onCheckBoxQuestion5"
+                android:text="Dominate" />
+            <CheckBox
+                android:id="@+id/checkBoxCelerity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onCheckBoxQuestion5"
+                android:text="Celerity" />
+            <CheckBox
+                android:id="@+id/checkBoxProtean"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onCheckBoxQuestion5"
+                android:text="Protean" />
+            <CheckBox
+                android:id="@+id/checkBoxAnimalism"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onCheckBoxQuestion5"
+                android:text="Animalism" />
         </LinearLayout>
-
-
     </ScrollView>
 
     <Button

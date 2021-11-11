@@ -14,12 +14,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class QuestionActivity extends AppCompatActivity {
 
     int[] rightAnswers = new int[]{0, 0, 0, 0, 0};
     List<String> clans = new ArrayList<>();
+    List<String> disciplines = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,7 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     //Logic for question 1: Answer = "Lasombra"
-    public void onRadioBtClick(View view) {
+    public void onRadioBtClickQuestion1(View view) {
 
         boolean checked = ((RadioButton) view).isChecked();
 
@@ -50,7 +52,7 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     //Logic for question 2: Answer = "Gangrel and Nosferatu"
-    public void onCheckBox(View view) {
+    public void onCheckBoxQuestion2(View view) {
 
         boolean checked = ((CheckBox) view).isChecked();
 
@@ -60,7 +62,6 @@ public class QuestionActivity extends AppCompatActivity {
         if (clans.contains("Gangrel") && clans.contains("Nosferatu") && !clans.contains("Toreador"))
             rightAnswers[1] = 1;
         else rightAnswers[1] = 0;
-        Toast.makeText(this, rightAnswers[1] + "", Toast.LENGTH_SHORT).show();
     }
 
     //Logic for question 3: Answer = "Brujah"
@@ -91,9 +92,41 @@ public class QuestionActivity extends AppCompatActivity {
         });
     }
 
+    public void onRadioBtClickQuestion4(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+
+        switch (view.getId()) {
+            case R.id.rbv_son:
+                if (checked)
+                    rightAnswers[3] = 1;
+                Toast.makeText(this, rightAnswers[4] + "", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.rbv_akashic:
+            case R.id.rbv_verbena:
+                if (checked)
+                    rightAnswers[3] = 0;
+                Toast.makeText(this, rightAnswers[4] + "", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+
+    public void onCheckBoxQuestion5(View view) {
+        boolean checked = ((CheckBox) view).isChecked();
+
+        if (checked) disciplines.add(((CheckBox) view).getText().toString());
+        else disciplines.remove(((CheckBox) view).getText().toString());
+
+        if (disciplines.contains("Protean") && disciplines.contains("Fortitude") && disciplines.contains("Animalism") && !disciplines.contains("Celerity") && !disciplines.contains("Dominate")){
+            rightAnswers[4] = 1;
+            Toast.makeText(this, disciplines.toString(), Toast.LENGTH_SHORT).show();
+        }
+        else {
+            rightAnswers[4] = 0;
+            Toast.makeText(this, disciplines.toString(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
     public void checkAnswers(View view) {
-        Log.i("Resp", rightAnswers[0]+"");
-        Log.i("Resp", rightAnswers[1]+"");
-        Log.i("Resp", rightAnswers[2]+"");
+        Toast.makeText(this, Arrays.toString(rightAnswers), Toast.LENGTH_SHORT).show();
     }
 }
