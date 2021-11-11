@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuestionActivity">
+
+    <ImageView
+        android:id="@+id/iv_wod"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        android:src="@drawable/worldofdarknessmmo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintBottom_toTopOf="@id/bv_send_button"
+        app:layout_constraintTop_toBottomOf="@id/iv_wod">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_question_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/darkagestypo"
+                android:gravity="center_horizontal"
+                android:text="Question 1"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gabriola"
+                android:textSize="25sp"
+                android:text="What Vampire Clan is commonly known to be a Pirate's clan in the Dark Ages?"
+
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/rbv_lasombra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onRadioBtClick"
+                    android:buttonTint="#B03030"
+                    android:text="Lasombra" />
+                <RadioButton
+                    android:id="@+id/rbv_gangrel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="#B03030"
+                    android:onClick="onRadioBtClick"
+                    android:text="Gangrel" />
+                <RadioButton
+                    android:id="@+id/rbv_ventrue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="#B03030"
+                    android:onClick="onRadioBtClick"
+                    android:text="Ventrue" />
+            </RadioGroup>
+            <TextView
+                android:id="@+id/tv_question_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/darkagestypo"
+                android:gravity="center_horizontal"
+                android:text="Question 2"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gabriola"
+                android:textSize="25sp"
+                android:text="What Vampire clans have Animalism as it's core discipline?"/>
+
+            <CheckBox
+                android:id="@+id/checkBoxGangrel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onCheckBox"
+                android:text="Gangrel" />
+            <CheckBox
+                android:id="@+id/checkBoxNosferatu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onCheckBox"
+                android:text="Nosferatu" />
+            <CheckBox
+                android:id="@+id/checkBoxToreador"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onCheckBox"
+                android:text="Toreador" />
+
+            <TextView
+                android:id="@+id/tv_question_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/darkagestypo"
+                android:gravity="center_horizontal"
+                android:text="Question 3"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gabriola"
+                android:textSize="25sp"
+                android:text="We are a clan of radicals and troublemakers, Embracing those willing to put someone in their place if the situation calls for it. Most see themselves as warriors with a cause, and these Rebels are guided by their passions, strength, and dedication to their ideals — whatever those may be.\n\nWhat vampire clan am I?"
+
+                />
+
+            <EditText
+                android:id="@+id/etv_clan_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:text=""
+                android:hint="Clan name only"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bv_send_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:alpha="0.8"
+        android:background="@color/black"
+        android:fontFamily="@font/darkagestypo"
+        android:text="Check answers"
+        android:textColor="@color/white"
+        android:onClick="checkAnswers"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
