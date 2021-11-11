@@ -1,11 +1,10 @@
 package com.example.quizappwod;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,11 +14,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
     public void startQuiz(View view) {
         Intent intent = new Intent(this, QuestionActivity.class);
-        ImageView wodImage = (ImageView) findViewById(R.id.iv_wod);
-
         startActivity(intent);
     }
 }

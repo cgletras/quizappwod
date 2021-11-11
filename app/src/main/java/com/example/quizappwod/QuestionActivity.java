@@ -13,7 +13,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class QuestionActivity extends AppCompatActivity {
@@ -119,7 +118,7 @@ public class QuestionActivity extends AppCompatActivity {
     public void checkAnswers(View view) {
         int score = 0;
         for (int i : rightAnswers) {
-            score+= i;
+            score += i;
         }
         Toast.makeText(this, "You got " + score + " out of 5 question right!", Toast.LENGTH_SHORT).show();
         score = 0;
