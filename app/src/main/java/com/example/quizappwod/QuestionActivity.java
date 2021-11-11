@@ -40,13 +40,11 @@ public class QuestionActivity extends AppCompatActivity {
             case R.id.rbv_lasombra:
                 if (checked)
                     rightAnswers[0] = 1;
-                Toast.makeText(this, rightAnswers[0] + "", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.rbv_gangrel:
             case R.id.rbv_ventrue:
                 if (checked)
                     rightAnswers[0] = 0;
-                Toast.makeText(this, rightAnswers[0] + "", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
@@ -72,10 +70,8 @@ public class QuestionActivity extends AppCompatActivity {
         editText.setOnFocusChangeListener((v, hasFocus) -> {
             String typedClan = editText.getText().toString().toLowerCase();
             if (!hasFocus){
-                Log.i("Teste", rightAnswers[2]+"");
                 if(typedClan.equals(clan.toLowerCase())) {
                     rightAnswers[2] = 1;
-                    Log.i("Teste", rightAnswers[2]+"");
                 }
             }
         });
@@ -99,13 +95,11 @@ public class QuestionActivity extends AppCompatActivity {
             case R.id.rbv_son:
                 if (checked)
                     rightAnswers[3] = 1;
-                Toast.makeText(this, rightAnswers[4] + "", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.rbv_akashic:
             case R.id.rbv_verbena:
                 if (checked)
                     rightAnswers[3] = 0;
-                Toast.makeText(this, rightAnswers[4] + "", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
@@ -118,11 +112,9 @@ public class QuestionActivity extends AppCompatActivity {
 
         if (disciplines.contains("Protean") && disciplines.contains("Fortitude") && disciplines.contains("Animalism") && !disciplines.contains("Celerity") && !disciplines.contains("Dominate")){
             rightAnswers[4] = 1;
-            Toast.makeText(this, disciplines.toString(), Toast.LENGTH_SHORT).show();
         }
         else {
             rightAnswers[4] = 0;
-            Toast.makeText(this, disciplines.toString(), Toast.LENGTH_SHORT).show();
         }
     }
 
