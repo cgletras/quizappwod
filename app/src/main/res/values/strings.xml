@@ -4,4 +4,7 @@
         \n\nYou are the monster, pretending to be human, fighting for survival and supremacy in a dark and mysterious world. Night after night you struggle to find your place in a baroque web of secrets, ancient conspiracies, and modern upheaval. In the quest for power, you leverage every asset, from arcane abilities to simple diplomacy, seduction, and street smarts.
         \n\nAre you ready to enter this world?
 </string>
+    <string name="quiz">Quiz</string>
+    <string name="main_title">About WOD</string>
+    <string name="start_quiz">Start quiz</string>
 </resources>
